@@ -8,4 +8,31 @@
 	<%= @post.text %>
 </p>
 
+<h2>Comments:</h2>
+<% @post.comments.each do |comment| %>
+	<p>
+		<strong>Commenter:</strong>
+		<%= comment.commenter %>
+	</p>
+	
+	<p>
+		<strong>Commenter:</strong>
+		<%= comment.body %>
+	</p>
+<% end %>
+
+<h2>Add a Comment:</h2>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+	<p>
+		<%= f.label :commenter %><br />
+		<%= f.text_field :commenter %>
+	</p>
+	<p>
+		<%= f.label :body %><br />
+		<%= f.text_field :body %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
 <%= link_to 'Back', posts_path %>
