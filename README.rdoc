@@ -4,10 +4,8 @@ Blog is built for learning and practicing purposes.
 
 Specification:
 
-* Ruby 1.9.3
+* Ruby 2.1.1
 
 * Rails 4.0.3
 
 * Mysql
-
-* TBD...
