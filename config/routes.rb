@@ -1,12 +1,13 @@
 Blog::Application.routes.draw do
-  devise_for :users
+  	devise_for :users, path_names: {sign: "login", sign_out: "logout"}
   	get "welcome/index"
   	
   	root 'welcome#index'
   	
-  	resources :posts	 do
+	resources :posts	do
 		resources :comments
 	end
+
   	
 	# The priority is based upon order of creation: first created -> highest priority.
 	# See how all your routes lay out with "rake routes".
