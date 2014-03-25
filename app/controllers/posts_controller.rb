@@ -6,13 +6,14 @@ class PostsController < ApplicationController
 	end
 	
 	def create
-		@post = Post.new(params[:post].permit(:title, :text))
+		render text: params[:post].inspect
+		# @post = Post.new(params[:post].permit(:title, :text))
 		
-		if @post.save
-			redirect_to @post	
-		else
-			render('new')
-		end
+		# if @post.save
+		# 	redirect_to @post	
+		# else
+		# 	render('new')
+		# end
 	end
 	
 	def show
